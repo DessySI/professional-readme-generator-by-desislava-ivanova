@@ -1,20 +1,20 @@
 const fs = require("fs");
-const path = require('path');
+//nodeconst path = require("/questions.js");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
-
-// array of questions for user
-const questions = [
-
-];
+const generateMarkdown = require("./utils/generateMarkdown.js");
+const questions = require("./questions.js");
 
 // function to write README file
-function writeToFile(fileName, data) {
-}
+const createMyFile = (filename, data) => {
+  fs.writeFileSync(filename, JSON.stringify(data));
+};
 
 // function to initialize program
-function init() {
-
+function init(filename) {
+  inquirer.prompt(questions).then(function (userInput) {
+    console.log(userInput);
+    createMyFile(`${filename}.md`, generateMarkdown(userInput));
+  });
 }
 
 // function call to initialize program
