@@ -62,11 +62,6 @@ const questions = [
     message: "Provide eMail adderess: ",
     type: "input",
   },
-  {
-    name: "filename",
-    message: "Add file name",
-    type: "input",
-  },
 ];
 
 module.exports = questions;

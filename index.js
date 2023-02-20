@@ -1,21 +1,23 @@
 const fs = require("fs");
-//nodeconst path = require("/questions.js");
+const path = require("path");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 const questions = require("./questions.js");
 
-// function to write README file
-const createMyFile = (filename, data) => {
-  fs.writeFileSync(filename, JSON.stringify(data));
-};
-
-// function to initialize program
-function init(filename) {
+// function to initialize program and call it
+(function init() {
   inquirer.prompt(questions).then(function (userInput) {
-    console.log(userInput);
-    createMyFile(`${filename}.md`, generateMarkdown(userInput));
+    // function to create readme_folder
+    const readmeFolderPath = path.join(__dirname, "readme_folder");
+    // Create new readme_folder if it doesn't exist
+    if (!fs.existsSync(readmeFolderPath)) {
+      fs.mkdirSync(readmeFolderPath);
+    }
+    const filePath = path.join(readmeFolderPath, "README.md");
+    // function to write README file
+    fs.writeFile(filePath, generateMarkdown(userInput), (err) => {
+      if (err) throw err;
+      console.log(`You can find your new redme file here: ${filePath}!`);
+    });
   });
-}
-
-// function call to initialize program
-init();
+})();
