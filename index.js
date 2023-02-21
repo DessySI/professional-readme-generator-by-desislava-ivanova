@@ -9,11 +9,13 @@ const questions = require("./questions.js");
   inquirer.prompt(questions).then(function (userInput) {
     // function to create readme_folder
     const readmeFolderPath = path.join(__dirname, "readme_folder");
+
     // Create new readme_folder if it doesn't exist
     if (!fs.existsSync(readmeFolderPath)) {
       fs.mkdirSync(readmeFolderPath);
     }
     const filePath = path.join(readmeFolderPath, "README.md");
+
     // function to write README file
     fs.writeFile(filePath, generateMarkdown(userInput), (err) => {
       if (err) throw err;

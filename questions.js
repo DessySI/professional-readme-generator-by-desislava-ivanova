@@ -1,4 +1,4 @@
-// array of questions for user
+// array of questions with validations
 const questions = [
   {
     name: "title",
