@@ -1,3 +1,4 @@
 node_modules
 package-lock.json
 readme_folder
+.DS_Store/ 
