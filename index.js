@@ -17,7 +17,7 @@ const questions = require("./questions.js");
     // function to write README file
     fs.writeFile(filePath, generateMarkdown(userInput), (err) => {
       if (err) throw err;
-      console.log(`You can find your new redme file here: ${filePath}!`);
+      console.log(`You can find your new redme file here: ${filePath}`);
     });
   });
 })();

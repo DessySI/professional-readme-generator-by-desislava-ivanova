@@ -1,33 +1,48 @@
-// function to generate markdown for README
+// // function to generate markdown for README
+// choices: [
+//   "Apache License 2.0",
+//   "GNU General Public License v3.0",
+//   "MIT License",
+//   "BSD 2-Clause 'Simplified' License",
+//   "BSD 3-Clause 'New' or 'Revised' License",
+//   "Boost Software License 1.0",
+//   "Creative Commons Zero v1.0 Universal",
+//   "Eclipse Public License 2.0",
+//   "GNU Affero General Public License v3.0",
+//   "GNU General Public License v2.0",
+//   "GNU Lesser General Public License v2.1",
+//   "Mozilla Public License 2.0",
+// ];
+
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.title} [![license](https://img.shields.io/badge/license-${data.licenseList}-blue)](https://shields.io)
 
   ## Description 
   ${data.description}
 
-  ##Table of Contents
+  ## Table of Contents
    - [Description](#description)
    - [Installation](#installation)
    - [Usage](#usage)
    - [Contributing](#contributing)
    - [Tests](#tests)
 
-  ##Installation
+  ## Installation
   ${data.installation}
 
-  ##Usage
+  ## Usage
   ${data.usage}
 
-  ##License
-  ${data.licenseList}
+  ## License
+  Licensed under the ${data.licenseList}
 
-  ##Contributing
+  ## Contributing
   ${data.contributing}
 
-  ##Tests
+  ## Tests
   ${data.tests}
 
-  ##Questions
+  ## Questions
    - ${data.gitHubUserName}
    - ${data.eMail}
 
