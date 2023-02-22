@@ -19,6 +19,8 @@ This is command-line application that dynamically generates a professional READM
 
 ## Video
 
+https://drive.google.com/file/d/1QGJDNZxYXu5E_jk1PdRSafzZC10qEu3c/view
+
 ## Report issues
 
 To report bugs or other issues with your ReadMe project, it's best to reach out to https://github.com/DessySI and create a new issue.
